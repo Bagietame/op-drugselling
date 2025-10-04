@@ -1,0 +1,252 @@
+.cursor {
+    display: inline-block;
+    width: 1px;
+    background: currentColor;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+#itemsList {
+    margin-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    .item {
+        width: 48px;
+        height: 56px;
+        border-radius: 8px;
+        border: 2px solid #2c2c2c;
+        background-color: rgb(19, 19, 19);
+        -webkit-box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.432);
+        -moz-box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.432);
+        box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.432);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+
+        transition: all ease 0.3s;
+
+        img {
+            width: 30px;
+            height: 30px;
+            margin-bottom: 8px;
+        }
+
+        opacity: 0.5;
+
+        p {
+            position: absolute;
+            color: #fff;
+            font-size: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -8px;
+        }
+    }
+
+    .selectedItem {
+        opacity: 1;
+    }
+
+    .item:hover {
+        opacity: 1 !important;
+    }
+}
+
+#wrapper {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#drugSellingMenu {
+
+    overflow: hidden;
+    width: 600px;
+    border-radius: 16px;
+    border: 3px solid #2c2c2c;
+    background-color: rgb(19, 19, 19);
+
+    -webkit-box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.432);
+    -moz-box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.432);
+    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.432);
+
+    .Header {
+        background-color: #1a1a1a;
+        padding: 15px 20px;
+        border-bottom: 2px solid #2c2c2c;
+        margin-bottom: 10px;
+
+        p {
+            color: #ffffff88;
+            font-size: 10px;
+            line-height: 1.5;
+        }
+
+        h1 {
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 1;
+
+            span {
+                font-size: 14px;
+                padding: 2px 14px;
+                border-radius: 10px;
+                font-family: 'Work Sans';
+                font-weight: 500;
+            }
+        }
+    }
+
+    #questionBox h1 {
+        will-change: transform, opacity;
+    }
+
+    #btns {
+        display: flex;
+        gap: .75rem;
+        margin-top: 1rem;
+    }
+
+
+    #questionBox {
+        padding: 5px 20px 20px 20px;
+
+        #topBox {
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            img {
+                width: 32px;
+                height: auto;
+                margin-right: -8px;
+            }
+
+            h2 {
+                color: #fff;
+                line-height: 1;
+
+                font-weight: 500;
+                font-family: 'Montserrat';
+            }
+
+            p {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+                color: #fff;
+                line-height: 1;
+
+                font-family: 'Work Sans';
+                font-size: 26px;
+                font-weight: 800;
+
+                background-color: #fff;
+                color: black;
+                border-radius: 6px;
+
+                width: 90px;
+            }
+        }
+
+        h1 {
+            font-family: 'Work Sans';
+            font-weight: 600;
+            color: #fff;
+            font-size: 15px;
+            line-height: 1;
+        }
+
+        #btns {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+
+            button {
+                color: #fff;
+                outline: 0;
+                border: 0;
+                background-color: transparent;
+                border-radius: 8px;
+                font-family: 'Montserrat';
+                font-weight: 500;
+                padding: 5px 15px;
+
+                transition: all ease 0.2s;
+                cursor: pointer;
+            }
+
+            button:hover {
+                opacity: 0.8 !important;
+            }
+
+            .success {
+                background-color: rgba(25, 207, 64, 0.322);
+                border: 2px solid #10b31e;
+
+                -webkit-box-shadow: 0px 0px 24px 0px rgba(25, 207, 64, 0.18);
+                -moz-box-shadow: 0px 0px 24px 0px rgba(25, 207, 64, 0.18);
+                box-shadow: 0px 0px 24px 0px rgba(25, 207, 64, 0.18);
+            }
+
+            .success2 {
+                background-color: rgba(110, 25, 207, 0.322);
+                border: 2px solid #710be6;
+
+                -webkit-box-shadow: 0px 0px 24px 0px rgba(110, 25, 207, 0.192);
+                -moz-box-shadow: 0px 0px 24px 0px rgba(110, 25, 207, 0.192);
+                box-shadow: 0px 0px 24px 0px rgba(110, 25, 207, 0.192);
+            }
+
+            .error {
+                background-color: rgba(207, 25, 25, 0.322);
+                border: 2px solid #b31010;
+                padding: 5px 25px;
+
+                -webkit-box-shadow: 0px 0px 24px 0px rgba(207, 25, 25, 0.199);
+                -moz-box-shadow: 0px 0px 24px 0px rgba(207, 25, 25, 0.199);
+                box-shadow: 0px 0px 24px 0px rgba(207, 25, 25, 0.199);
+            }
+
+            .error2 {
+                background-color: rgba(116, 116, 116, 0.322);
+                border: 2px solid #5c5c5c;
+                padding: 5px 25px;
+
+                -webkit-box-shadow: 0px 0px 24px 0px rgba(116, 116, 116, 0.178);
+                -moz-box-shadow: 0px 0px 24px 0px rgba(116, 116, 116, 0.178);
+                box-shadow: 0px 0px 24px 0px rgba(116, 116, 116, 0.178);
+            }
+        }
+    }
+}
+
