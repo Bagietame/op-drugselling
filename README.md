@@ -2,6 +2,8 @@
 
 Simple drug selling script with Dynamic ped interactions (buy/refuse/flee), Configurable drug list & pricing, Immersive animations & dialogue system
 
+This script is a part of Paid Most Advanced Gang Script --> <https://otherplanet.dev/product/gangs>
+
 ## 💾 Download
 https://github.com/Bagietame/op-drugselling/releases/latest/download/op-drugselling.zip
 
