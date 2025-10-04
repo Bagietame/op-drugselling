@@ -96,13 +96,13 @@ Citizen.CreateThread(function()
             end
             
             for k, v in pairs(items) do
-                if v and Config.DrugSelling.availableDrugs[v.name] and v.amount > 0 then
+                if v and Config.DrugSelling.availableDrugs[v.name] and (v.amount or v.count > 0) then
                     local drugInfo = Config.DrugSelling.availableDrugs[v.name]
                     table.insert(drugsList, {
                         icon = drugInfo.icon,
                         spawn_name = v.name,
                         label = drugInfo.label,
-                        amount = v.amount,
+                        amount = v.amount or v.count,
                         normalPrice = drugInfo.optimalPrice,
                         priceRangeMin = drugInfo.minimumPrice,
                         priceRangeMax = drugInfo.maximumPrice,
