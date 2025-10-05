@@ -1,7 +1,8 @@
 Config = {}
-Config.Locale = "en" -- Supported: EN / SK / CS
+Config.Locale = "en" -- Supported: EN / SK / CS / DE
 
 -- Czech and Slovak languages by: iceyy4400 (discord id: 1057394957897441380)
+-- German Language by: nameitsphil (discord id: 457672439510335498)
 
 Config.Debug = false
 

@@ -199,13 +199,13 @@ Citizen.CreateThread(function()
                 playerLVL = sold.newLevel
                 FaceEachOtherAndPlayGive(dealingPed, drugCfg.handPropName)
                 if not sold.isRivalry then 
-                    sendNotify(TranslateIt('notify_success', sold.amount, sold.label, sold.price), "success", 5)
+                    --sendNotify(TranslateIt('notify_success', sold.amount, sold.label, sold.price), "success", 5)
                 else
-                    sendNotify(TranslateIt('notify_success_2', sold.amount, sold.label, sold.price), "success", 5)
+                    --sendNotify(TranslateIt('notify_success_2', sold.amount, sold.label, sold.price), "success", 5)
                 end
 
                 if sold.zoneOwner then 
-                    sendNotify(TranslateIt('notify_zoneowner'), "info", 5)
+                    --sendNotify(TranslateIt('notify_zoneowner'), "info", 5)
                 end
                 
                 movementDisabled = false
@@ -251,9 +251,7 @@ Citizen.CreateThread(function()
     if Config.CornerDealing.Enable then
         debugPrint("Registering drug selling command:", Config.CornerDealing.Command)
 
-        TriggerEvent('chat:addSuggestion', ('/%s'):format(Config.CornerDealing.Command), TranslateIt('drugsell_command_help'), {})
-
-        RegisterCommand(Config.CornerDealing.Command, function()
+        RegisterNetEvent('op-drugselling:startDealingCorner', function()
             if isOnCooldown then
                 return sendNotify(TranslateIt('drugDealing_wait'), "error", 5)
             end
@@ -277,6 +275,12 @@ Citizen.CreateThread(function()
                     isOnCooldown = false
                 end)
             end
+        end)
+
+        TriggerEvent('chat:addSuggestion', ('/%s'):format(Config.CornerDealing.Command), TranslateIt('drugsell_command_help'), {})
+
+        RegisterCommand(Config.CornerDealing.Command, function()
+            TriggerEvent('op-drugselling:startDealingCorner')
         end)
 
         function getNextDealing()
