@@ -65,6 +65,9 @@ Citizen.CreateThread(function()
 
         local hasItem = Fr.getItem(xPlayer, drugName)
         if not (hasItem and hasItem.amount and hasItem.amount > 0) then
+            print('[op-drugselling] Player doenst have items inside inventory')
+            print(json.encode(hasItem))
+            print("drugName", drugName)
             return cb(false)
         end
 
