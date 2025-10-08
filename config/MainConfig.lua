@@ -217,7 +217,6 @@ Config.PedTypes = {
 Config.PedsList = {
     -- Other Peds Not Listed Here will be handled like Normal Ped Type.
     -- [Addicted Peds]
-    [`a_m_m_skidrow_01`] = 'addicted',
     [`a_f_m_skidrow_01`] = 'addicted',
     [`g_m_y_ballasout_01`] = 'addicted',
     [`g_m_y_ballaeast_01`] = 'addicted',
@@ -277,4 +276,10 @@ Config.PedsList = {
     [`s_m_m_highsec_02`] = 'undercover',
     [`s_m_y_cop_01`] = 'undercover',
     [`csb_undercover`] = 'undercover'
+}
+
+
+-- Black list peds
+Config.BlackListPeds = {
+    [`a_m_m_skidrow_01`] = true,
 }

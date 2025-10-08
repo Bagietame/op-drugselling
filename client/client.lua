@@ -62,6 +62,8 @@ Citizen.CreateThread(function()
         sellDrugMenu(entity)
     end, function(entity) 
         if isDrugDealing and dealingPed ~= entity then return false end
+        local pedModel = GetEntityModel(entity)
+        if Config.BlackListPeds[pedModel] then return end
         local inventoryItems = ScriptFunctions.GetInventoryDrugs()
         if #inventoryItems < 1 then return false end
         if soldPedsList[entity] then return false end
