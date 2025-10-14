@@ -2,7 +2,7 @@ fx_version "cerulean"
 
 description "Drug Selling Script | Fully Compatible with OP-GANGS 2.0!"
 author "OTHERPLANET"
-version '1.0.2'
+version '1.0.4'
 lua54 'yes'
 game 'gta5'
 
@@ -17,7 +17,10 @@ shared_scripts {
 
 client_scripts {
 	'config/MainConfig.lua',
-	'framework/client/c_framework.lua',
+	'framework/client/shared.lua',
+	'framework/client/esx.lua',
+	'framework/client/qb.lua',
+	'framework/client/qbox.lua',
 	'integrations/client/**',
 	'client/**',
 }
@@ -25,7 +28,9 @@ client_scripts {
 server_scripts {
 	'@oxmysql/lib/MySQL.lua',
 	'config/ServerConfig.lua',
-	'framework/server/s_framework.lua',
+	'framework/server/esx.lua',
+	'framework/server/qb.lua',
+	'framework/server/qbox.lua',
 	'server/**',
 }
 
