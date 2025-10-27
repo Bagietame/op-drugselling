@@ -1,7 +1,8 @@
 if Config.dispatchScript == "lb-tablet" then
     function sendDispatchAlert(title, message, blipData)
         local currentPos = GetEntityCoords(PlayerPedId())
-        local locationInfo = getStreetandZone(currentPos)
+        local streetHash = GetStreetNameAtCoord(currentPos)
+        local locationInfo = GetStreetNameFromHashKey(streetHash)
 
         local dispatchData = {
             priority = "medium",

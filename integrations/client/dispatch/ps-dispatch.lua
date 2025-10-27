@@ -2,7 +2,8 @@ if Config.dispatchScript == "ps-dispatch" then
 
     function sendDispatchAlert(title, message, blipData)
         local currentPos = GetEntityCoords(PlayerPedId())
-        local locationInfo = getStreetandZone(currentPos)
+        local streetHash = GetStreetNameAtCoord(currentPos)
+        local locationInfo = GetStreetNameFromHashKey(streetHash)
         local gender = GetPedGender()
         TriggerServerEvent("dispatch:server:notify",{
             dispatchcodename = "bankrobbery", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
