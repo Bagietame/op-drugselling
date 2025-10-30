@@ -22,6 +22,8 @@ Config.dispatchScript = "none"
 -- codem_dispatch 
 -- lb-tablet 
 -- ps-dispatch 
+-- origen_police
+-- piotreq_gpt
 -- rcore_dispatch
 
 Config.CurrencySettings = {
