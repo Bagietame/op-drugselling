@@ -10,7 +10,7 @@ Config.Debug = false
 -- Best Gangs Script for FiveM -> https://otherplanet.dev/product/gangs
 
 Config.AdditionalScripts = {
-    op_Gangs = true, -- https://otherplanet.dev/product/gangs
+    op_Gangs = false, -- https://otherplanet.dev/product/gangs
 }
 
 Config.LevelCommand = "mylevel" -- Check current player level and boost. Set it to false to disable.
