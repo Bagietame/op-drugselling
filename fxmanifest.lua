@@ -2,7 +2,7 @@ fx_version "cerulean"
 
 description "Drug Selling Script | Fully Compatible with OP-GANGS 2.0!"
 author "OTHERPLANET"
-version '1.0.6'
+version '1.0.8'
 lua54 'yes'
 game 'gta5'
 
