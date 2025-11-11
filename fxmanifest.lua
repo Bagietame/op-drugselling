@@ -31,6 +31,7 @@ server_scripts {
 	'framework/server/esx.lua',
 	'framework/server/qb.lua',
 	'framework/server/qbox.lua',
+	'integrations/server/**',
 	'server/**',
 }
 

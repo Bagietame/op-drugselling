@@ -10,7 +10,7 @@ Config.Debug = false
 -- Best Gangs Script for FiveM -> https://otherplanet.dev/product/gangs
 
 Config.AdditionalScripts = {
-    op_Gangs = false, -- https://otherplanet.dev/product/gangs
+    op_Gangs = true, -- https://otherplanet.dev/product/gangs
 }
 
 Config.LevelCommand = "mylevel" -- Check current player level and boost. Set it to false to disable.
@@ -104,7 +104,7 @@ Config.CornerDealing = {
 
 Config.Leveling = {
     Enable = true,
-    LevelEXP = 500, -- One level == 500 exp.
+    LevelEXP = 50, -- One level == 500 exp.
     LevelsList = {
         [1] = 1, -- 1% Boost for level.
         [2] = 2, -- 2% Boost for level.

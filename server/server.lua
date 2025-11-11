@@ -140,6 +140,7 @@ Fr.RegisterServerCallback('op-drugselling:sellDrug', function(source, cb, drugNa
             end
         end
         playersEXP[tostring(source)].exp = playersEXP[tostring(source)].exp + cfgPed.saleEXP 
+        playersEXP[tostring(source)].changed = true
         local newLevel = levelFromExp(playersEXP[tostring(source)].exp)
 
         finalPrice = math.floor(finalPrice)
@@ -192,21 +193,23 @@ function SavePlayerXP(src)
     if not st then return end
 
     MySQL.update.await([[
-        INSERT INTO `]] .. Fr.usersTable .. [[` (`]] .. Fr.identificatorTable .. [[`, expdrugs) 
-        VALUES (?, ?)
-        ON DUPLICATE KEY UPDATE expdrugs = VALUES(expdrugs)
-    ]], { ident, st.exp })
+        UPDATE `]] .. Fr.usersTable .. [[`
+        SET expdrugs = ?
+        WHERE `]] .. Fr.identificatorTable .. [[` = ?
+    ]], { st.exp, ident })
 
     playersEXP[tostring(src)].changed = false
 end
 
 CreateThread(function()
     while true do
-        Wait(180000)
+        Wait(120000)
         for src, st in pairs(playersEXP) do
             if st.changed then 
                 SavePlayerXP(src) 
                 debugPrint('Saved Player:', src)
+            else
+                debugPrint('Skipping', src, json.encode(st))      
             end
         end
     end
