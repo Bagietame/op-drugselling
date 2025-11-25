@@ -25,6 +25,7 @@ Config.dispatchScript = "none"
 -- origen_police
 -- piotreq_gpt
 -- rcore_dispatch
+-- kartik-mdt
 
 Config.CurrencySettings = {
     -- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
